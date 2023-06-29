@@ -5,7 +5,7 @@ import Navbar from '../../components/Navbar/Navbar'
 import LoginRegister from '../../components/loginRegister/LoginReg'
 
 const Home = () => {
-  const [isLogedIn, setLogIn] = useState(false)
+  const [isLogedIn, setLogIn] = useState(true)
   return (
     <main>
       <Navbar isLogedIn={isLogedIn} />

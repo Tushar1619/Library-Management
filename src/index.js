@@ -8,7 +8,7 @@ import About from './pages/About/About'
 import BookList from './components/BookList/BookList'
 import BookDetails from './components/BookDetails/BookDetails'
 import LoginRegister from './components/loginRegister/LoginReg'
-
+import Cart from './components/Cart/Cart'
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <AppProvider>
@@ -18,7 +18,8 @@ root.render(
           <Route path="about" element={<About />} />
           <Route path="book" element={<BookList />} />
           <Route path="/book/:id" element={<BookDetails />} />
-          <Route path="loginreg" element={<LoginRegister />} />
+          {/*<Route path="loginreg" element={<LoginRegister />} />*/}
+          <Route path="/cart" element={<Cart />} />
         </Route>
       </Routes>
     </BrowserRouter>

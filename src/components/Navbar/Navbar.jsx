@@ -37,31 +37,36 @@ const Navbar = ({ isLogedIn }) => {
               : 'navbar-collapse'
           }
         >
-          <ul className="navbar-nav">
-            {isLogedIn ? (
-              <div>
-                <li className="nav-item">
-                  <Link
-                    to="book"
-                    className="nav-link text-uppercase text-white fs-22 fw-6 ls-1"
-                  >
-                    Home
-                  </Link>
-                </li>
-
-                <li className="nav-item">
-                  <Link
-                    to="about"
-                    className="nav-link text-uppercase text-white fs-22 fw-6 ls-1"
-                  >
-                    about
-                  </Link>
-                </li>
-              </div>
-            ) : (
-              <li className="nav-item text-white">login or register</li>
-            )}
-          </ul>
+          {isLogedIn ? (
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link
+                  to="book"
+                  className="nav-link text-uppercase text-white fs-22 fw-6 ls-1"
+                >
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to="about"
+                  className="nav-link text-uppercase text-white fs-22 fw-6 ls-1"
+                >
+                  about
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to="cart"
+                  className="nav-link text-uppercase text-white fs-22 fw-6 ls-1"
+                >
+                  Cart
+                </Link>
+              </li>
+            </ul>
+          ) : (
+            <div className="nav-item text-white">login or register"</div>
+          )}
         </div>
       </div>
     </nav>
