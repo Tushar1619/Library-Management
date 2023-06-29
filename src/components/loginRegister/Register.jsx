@@ -1,6 +1,6 @@
+import axios from 'axios'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-
 export default function Register(props) {
   const navigate = useNavigate()
   const [creds, setCreds] = useState({
@@ -86,7 +86,8 @@ export default function Register(props) {
           year,
         }
         console.log(body)
-        let res = res.data
+        var res = await axios.post('http://localhost:5000/api/auth/createuser', body);
+        res = res.data
         if (!res.token) {
           console.log('No token Found')
         } else {
@@ -154,7 +155,7 @@ export default function Register(props) {
               </div>
             </div>
 
-            <div>
+            {/* <div>
               <label
                 htmlFor="enrollmentNo"
                 className="block text-sm font-medium leading-6 text-gray-900"
@@ -173,9 +174,9 @@ export default function Register(props) {
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-700 sm:text-sm sm:leading-6"
                 />
               </div>
-            </div>
+            </div> */}
 
-            <div>
+            {/* <div>
               <label
                 htmlFor="mobNo"
                 className="block text-sm font-medium leading-6 text-gray-900"
@@ -194,9 +195,9 @@ export default function Register(props) {
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-700 sm:text-sm sm:leading-6"
                 />
               </div>
-            </div>
+            </div> */}
 
-            <div>
+            {/* <div>
               <label
                 htmlFor="classs"
                 className="block text-sm font-medium leading-6 text-gray-900"
@@ -215,8 +216,8 @@ export default function Register(props) {
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-700 sm:text-sm sm:leading-6"
                 />
               </div>
-            </div>
-            <div>
+            </div> */}
+            {/* <div>
               <label
                 htmlFor="section"
                 className="block text-sm font-medium leading-6 text-gray-900"
@@ -235,9 +236,9 @@ export default function Register(props) {
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-700 sm:text-sm sm:leading-6"
                 />
               </div>
-            </div>
+            </div> */}
 
-            <div>
+            {/* <div>
               <label
                 htmlFor="year"
                 className="block text-sm font-medium leading-6 text-gray-900"
@@ -256,7 +257,7 @@ export default function Register(props) {
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-700 sm:text-sm sm:leading-6"
                 />
               </div>
-            </div>
+            </div> */}
 
             <div>
               <label

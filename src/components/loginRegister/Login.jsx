@@ -1,3 +1,4 @@
+import axios from 'axios'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -17,7 +18,8 @@ export default function Login(props) {
       password,
     }
     console.log(body)
-    let res = res.data
+    var res = await axios.post('http://localhost:5000/api/auth/login', body);
+    res = res.data
     if (!res.token) {
       console.log('No token Found')
     } else {
@@ -26,7 +28,7 @@ export default function Login(props) {
       localStorage.setItem('user', 'student')
       localStorage.setItem('userData', JSON.stringify(res.user))
 
-      navigate('/dashboard')
+      navigate('/book')
     }
   }
   return (
