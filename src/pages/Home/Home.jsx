@@ -17,7 +17,7 @@ const Home = () => {
   useEffect(()=>{
     isLoggedIn()
   },[]);
-  const [isLogedIn, setLogIn] = useState(true)
+  const [isLogedIn, setLogIn] = useState(false)
   return (
     <main>
       
