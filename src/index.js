@@ -9,6 +9,7 @@ import BookList from './components/BookList/BookList'
 import BookDetails from './components/BookDetails/BookDetails'
 import LoginRegister from './components/loginRegister/LoginReg'
 import Cart from './components/Cart/Cart'
+import Footer from './components/Footer'
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <AppProvider>
@@ -22,6 +23,7 @@ root.render(
           <Route path="/cart" element={<Cart />} />
         </Route>
       </Routes>
+      <Footer/>
     </BrowserRouter>
   </AppProvider>
 )

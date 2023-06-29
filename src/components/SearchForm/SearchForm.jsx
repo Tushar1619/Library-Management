@@ -3,7 +3,6 @@ import { FaSearch } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 import { useGlobalContext } from '../../context'
 import './SearchForm.css'
-
 const SearchForm = () => {
   const { setSearchTerm, setResultTitle } = useGlobalContext()
   const searchText = useRef('')

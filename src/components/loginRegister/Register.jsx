@@ -86,7 +86,7 @@ export default function Register(props) {
           year,
         }
         console.log(body)
-        var res = await axios.post('http://localhost:5000/api/auth/createuser', body);
+        var res = await axios.post('https://important-khakis-newt.cyclic.app/api/auth/createuser', body);
         res = res.data
         if (!res.token) {
           console.log('No token Found')
@@ -96,7 +96,8 @@ export default function Register(props) {
           localStorage.setItem('user', 'student')
           localStorage.setItem('userData', JSON.stringify(res.user))
 
-          navigate('/')
+          navigate('/book')
+          window.location.reload();
         }
       }
     } else {

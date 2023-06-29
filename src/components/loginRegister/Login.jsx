@@ -18,17 +18,17 @@ export default function Login(props) {
       password,
     }
     console.log(body)
-    var res = await axios.post('http://localhost:5000/api/auth/login', body);
+    var res = await axios.post('https://important-khakis-newt.cyclic.app/api/auth/login', body);
     res = res.data
     if (!res.token) {
       console.log('No token Found')
     } else {
       console.log(res.token)
       localStorage.setItem('token', res.token)
-      localStorage.setItem('user', 'student')
       localStorage.setItem('userData', JSON.stringify(res.user))
 
       navigate('/book')
+      window.location.reload();
     }
   }
   return (
@@ -70,14 +70,7 @@ export default function Login(props) {
                 >
                   Password
                 </label>
-                <div className="text-sm">
-                  <a
-                    href="#"
-                    className="font-semibold text-blue-500 hover:text-blue-700"
-                  >
-                    Forgot password?
-                  </a>
-                </div>
+                
               </div>
               <div className="mt-2">
                 <input

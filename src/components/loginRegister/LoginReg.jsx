@@ -5,11 +5,11 @@ import Register from './Register'
 export default function LoginRegister() {
   const [isLogin, setLogin] = useState(true)
   return (
-    <div>
+    <div >
       <div className="flex py-8 items-center justify-center">
         <button
           onClick={() => {
-            setLogin(!isLogin)
+            setLogin(false)
           }}
           className="border border-solid border-purple-700 p-4 w-48"
         >
@@ -17,7 +17,7 @@ export default function LoginRegister() {
         </button>
         <button
           onClick={() => {
-            setLogin(!isLogin)
+            setLogin(true)
           }}
           className="border border-solid border-purple-700 p-4 w-48"
         >

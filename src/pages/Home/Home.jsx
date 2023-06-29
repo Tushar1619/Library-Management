@@ -5,25 +5,25 @@ import Navbar from '../../components/Navbar/Navbar'
 import LoginRegister from '../../components/loginRegister/LoginReg'
 
 const Home = () => {
+  
+  // localStorage.clear();
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  function isLoggedIn(){
-    let token=localStorage.getItem('token')
-    if(token!==null)
-    {
-      setLogIn(true);
-    }
-  }
+  // useEffect(() => {
+  //   const token = localStorage.getItem('token');
+  //   setIsLoggedIn(token !== null);
+  // }, []);
 
-  useEffect(()=>{
-    isLoggedIn()
-  },[]);
-  const [isLogedIn, setLogIn] = useState(false)
   return (
     <main>
-      
-      <Navbar isLogedIn={isLogedIn} />
-      {isLogedIn ? <Header /> : <LoginRegister />}
-      <Outlet />
+      <Navbar />
+      {!localStorage.getItem('token') && <LoginRegister />}
+      {localStorage.getItem('token') && (
+        <>
+          <Header />
+          <Outlet />
+        </>
+      )}
     </main>
   )
 }

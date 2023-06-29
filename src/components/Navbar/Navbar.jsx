@@ -1,20 +1,26 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
-import logoImg from '../../images/logo.png'
+// import logoImg from '../../images/logo.png'
+import logoImg from '../../Logo.svg'
 import { HiOutlineMenuAlt3 } from 'react-icons/hi'
 
 const Navbar = ({ isLogedIn }) => {
   const [toggleMenu, setToggleMenu] = useState(false)
   const handleNavbar = () => setToggleMenu(!toggleMenu)
+  const handleLogOut = (e) =>{
+    e.preventDefault();
+    localStorage.clear();
+    window.location.reload();
 
+  }
   return (
     <nav className="navbar" id="navbar">
       <div className="container navbar-content flex">
         <div className="brand-and-toggler flex flex-sb">
           <Link to="/" className="navbar-brand flex">
             <img src={logoImg} alt="site logo" />
-            <span className="text-uppercase fw-7 fs-24 ls-1">bookhub</span>
+            <span className="text-uppercase fw-7 fs-24 ls-1">BPIT</span>
           </Link>
           <button
             type="button"
@@ -37,8 +43,8 @@ const Navbar = ({ isLogedIn }) => {
               : 'navbar-collapse'
           }
         >
-          {isLogedIn ? (
-            <ul className="navbar-nav">
+          {localStorage.getItem('token') ? (
+            <ul className="navbar-nav flex items-center">
               <li className="nav-item">
                 <Link
                   to="book"
@@ -62,6 +68,10 @@ const Navbar = ({ isLogedIn }) => {
                 >
                   Cart
                 </Link>
+              </li>
+              <li className="nav-item">
+              
+                  <button className='py-2 px-4 nav-link    rounded-xl' onClick={handleLogOut} >LOGOUT</button>
               </li>
             </ul>
           ) : (
